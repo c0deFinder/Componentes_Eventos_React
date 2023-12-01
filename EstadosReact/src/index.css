@@ -72,6 +72,7 @@ button:focus-visible {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  box-shadow: #213547;
 }
 
 #seccionIconos i {
@@ -80,4 +81,10 @@ button:focus-visible {
   border-radius: 50px;
   border: 1px solid black;
   padding: 10px;
+}
+.boton-peligro {
+  background-color: #ff0000;
+  color: white;
+  border: 1px solid #ff0000;
+  padding: 0.25rem 0.5rem;
 }

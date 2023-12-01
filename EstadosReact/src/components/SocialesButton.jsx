@@ -2,7 +2,7 @@ const SocialMedia = (props) => {
  
     
         return (
-            <i className={props.icono}></i>
+            <i style={{margin: "0.8rem"}} className={props.icono}></i>
           )
         }
    

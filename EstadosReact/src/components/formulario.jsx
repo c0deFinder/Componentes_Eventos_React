@@ -10,33 +10,49 @@ const Formulari01 = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [pass, setPass] = useState("");
+    const [errorr, setError] = useState(false);
     
     
 
     const validarDatos = (e) => {
         e.preventDefault();
-        if (nombre === "" || email === "" || password === "" || pass === "") {
+        if (nombre === Number ) {
+            props.setAlert({
+                error: true,
+                msg: "Ingrese su nombre correctamente",
+                color: "danger",
+            })
+            
+        }
+        if (nombre === Number ||nombre === "" || email === "" || password === "" || pass === "") {
             props.setAlert({
                 error: true,
                 msg: "Ingrese sus datos",
-                color: "warning",
-            });
+                
+               
+            })
+            setError(true);;
         } else if (password != pass) {
             props.setAlert({
                 error: true,
                 msg: "Contraseña Incorrecta",
-                color: "danger",
-            });
+                color: "red",
+            })
+            
         } else {
+            setError(false);
             props.setAlert({
                 error: true,
                 msg: "Registro correcto",
                 color: "success",
-            });
+            })
+    
             setNombre("");
             setEmail("");
             setPassword("");
             setPass("");
+            
+
         }
     }
     return (
@@ -75,7 +91,9 @@ const Formulari01 = (props) => {
                         onChange={(e) => setPass(e.target.value)}
                     />
                 </Form.Group>
-                <Button className="w-100" variant="success" type="submit">
+                
+                <Button className="w-100" type="submit">
+                {errorr ? <p  style={{ color: "yellow", margin: "4px",padding:"2px" }}>Todos los campos son obligatorios</p> : null}
                     Registrarse
                 </Button>
             </Form>
